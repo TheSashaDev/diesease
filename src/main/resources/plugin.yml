@@ -1,0 +1,35 @@
+name: DiseasesPlugin
+version: 1.0
+main: com.funbuilders.disease.Disease # Replace with your actual package name
+api-version: 1.20
+authors: [TheSashaDev] # Replace with your name or alias
+description: Adds realistic disease mechanics to your Minecraft server.
+depend: [] # Add plugins your plugin depends on
+softdepend: [] # Add plugins your plugin integrates with, but can work without
+load: STARTUP # When the plugin loads; STARTUP/POSTWORLD
+prefix: diseases # plugin prefix for messages
+commands:
+  diseases:
+    description: Main command for the Diseases Plugin.
+    usage: /<command> [reload|give|infect|cure]
+    permission: diseases.admin # default permission to use /diseases command
+    aliases: [disease]
+permissions:
+  diseases.admin:
+    description: Allows use of all /diseases commands.
+    default: op # Gives access to op users by default
+  diseases.reload:
+    description: Allows reloading the plugin configuration.
+    default: op
+  diseases.give:
+    description: Allows giving disease-related items to players.
+    default: op
+    permission: diseases.admin
+  diseases.infect:
+    description: Allows infecting players with diseases.
+    default: op
+    permission: diseases.admin
+  diseases.cure:
+    description: Allows curing players from diseases.
+    default: op
+    permission: diseases.admin
